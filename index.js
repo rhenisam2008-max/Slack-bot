@@ -1,4 +1,12 @@
+require("dotenv").config();
 const axios = require("axios");
+const { App } = require("@slack/bolt");
+
+const app = new App({
+  token: process.env.SLACK_BOT_TOKEN,
+  appToken: process.env.SLACK_APP_TOKEN,
+  socketMode: true
+});
 app.command("/jarvis-catfact", async ({ ack, respond }) => {
   await ack();
 
@@ -8,15 +16,6 @@ app.command("/jarvis-catfact", async ({ ack, respond }) => {
   } catch (err) {
     await respond({ text: "Failed to fetch a cat fact." });
   }
-});
-require("dotenv").config();
-
-const { App } = require("@slack/bolt");
-
-const app = new App({
-  token: process.env.SLACK_BOT_TOKEN,
-  appToken: process.env.SLACK_APP_TOKEN,
-  socketMode: true
 });
 
 app.command("/jarvis-ping", async ({ command, ack, respond }) => {
