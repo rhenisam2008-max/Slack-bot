@@ -55,3 +55,6 @@ Useful when you want to know JARVIS is up and running.
 
 
 **Available art:** `rocket` `trophy` `castle` `robot` `fire` `crown` `sword` `shield`
+
+
+![A fun Slack bot that draws 3D ASCII shapes, renders giant text, and drops ASCII art scenes — built with Node.js and Slack Bolt.](screenshots/bot.png)
